@@ -4,12 +4,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-
+<!-- 
 <div class="w3-container w3-teal">
 <h1>Summer Holiday</h1>
-</div>
+</div> -->
 
-<div class="w3-content">
+<app-header></app-header>
+<div class="w3-content" style="margin-top: 120px;">
 
 <div class="w3-row w3-margin">
 
@@ -17,11 +18,12 @@
   <img src="/assets/images/soap.jpg" style="width:100px;min-height:20px">
 </div>
 <div class="w3-twothird w3-container" style="margin-left: -159px;">
-  <h2>5 Terre</h2>
+  <h2>+6 Dettol Soap</h2>
   <p>
-  Lorem ipsum dolor sit amet
+ 
   </p>
 </div>
+
 </div>
 </div>
 
@@ -31,12 +33,12 @@
     <div class="w3-row w3-margin">
     
     <div class="w3-third">
-      <img src="/assets/images/soap.jpg" style="width:100px;min-height:20px">
+      <img src="/assets/images/super.jpg" style="width:100px;min-height:20px">
     </div>
     <div class="w3-twothird w3-container" style="margin-left: -159px;">
-      <h2>5 Terre</h2>
+      <h2>+24 Super Biscuit</h2>
       <p>
-      Lorem ipsum dolor sit amet
+     
       </p>
     </div>
     </div>
@@ -48,23 +50,38 @@
     <div class="w3-row w3-margin">
     
     <div class="w3-third">
-      <img src="/assets/images/soap.jpg" style="width:100px;min-height:20px">
+      <img src="/assets/images/dairy.jpg" style="width:100px;min-height:20px">
     </div>
     <div class="w3-twothird w3-container" style="margin-left: -159px;">
-      <h2>5 Terre</h2>
+      <h2>+2 Cadbury Dairy Milk</h2>
       <p>
-      Lorem ipsum dolor sit amet
-      </p>
+           </p>
     </div>
     </div>
     </div>
    
 </body>
 </html>
-
-<p-dialog header="Title" [(visible)]="display">
-  Content
+<p-dialog header="CHECKOUT" [(visible)]="display" [style]="{width: '50vw'}">
+  <div class="w3-container w3-padding-32" id="contact">
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Address" required name="Address">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Phone" required name="Phone">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Notes" required name="Comments">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SUBMIT ORDER
+      </button>
+    </form>
+  </div>
 </p-dialog>
 
 
-<button pButton type="button" label="Click"  (click)="showDialog()"></button>
+
+<!-- <button pButton type="button" label="Click"  (click)="showDialog()"></button> -->
+<div>
+
+  <button  (click)="showDialog()" style="margin-left: 305px; margin-top: 24px;" pButton pRipple type="button" label="" class="p-button-rounded p-button-warning">
+    Submit Order
+  </button>
+</div>
