@@ -10,6 +10,7 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     ButtonModule,
     DialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],
