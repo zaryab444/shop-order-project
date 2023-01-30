@@ -1,14 +1,18 @@
-<form [formGroup]="myForm">
-  <div formArrayName="items">
-    <div *ngFor="let item of myForm.get('items').value; let i = index">
-      <div [formGroupName]="i">
-        <input type="text" formControlName="name">
-        <input type="text" formControlName="quantity">
-        <button type="submit" (click)="submit()">Submit</button>
-        <button (click)="addItem()">Add Item</button>
-      <button (click)="removeItem(i)">Remove Item</button>
-      </div>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="arr" 
+
+  *ngFor="let a of myForm.get('arr')?.controls; let i = index">
+  
+    <div [formGroupName]="i" style="margin-bottom: 10px;">
+      <label for="name">Name:</label>
+      <input type="text" name="name" formControlName="name">
+      <br><br>
+      <label for="pay">Pay:</label>
+      <input type="text" name="pay" formControlName="pay">
     </div>
   </div>
+  <br>
+  <button type="button" (click)="addItem()" style="margin-right: 5px;">Add</button>
+  <button type="submit">Submit</button>
 </form>
-

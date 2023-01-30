@@ -7,38 +7,32 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public myForm: FormGroup;
-  items: FormArray;
+  myForm: FormGroup;
+  arr: FormArray;
 
-
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+   
+  }
 
   ngOnInit() {
-    this.formInit();
-  }
-
-  formInit() {
     this.myForm = this.fb.group({
-      name:[null],
-      items: this.fb.array([this.createItem()])
-    });
-    this.items = this.myForm.get('items') as FormArray;
-  }
-
-  createItem():FormGroup{
-    return this.fb.group({
-      name:[''],
-      quantity:['']
+      arr: this.fb.array([this.createItem()])
     })
   }
+
+  createItem() {
+    return this.fb.group({
+      name: [''],
+      pay: ['']
+    })
+  }
+
   addItem() {
-    this.items.push(this.createItem());
+    this.arr = this.myForm.get('arr') as FormArray;
+    this.arr.push(this.createItem());
   }
-  
-  removeItem(index) {
-    this.items.removeAt(index);
-  }
-  submit(){
-    console.log(this.myForm.getRawValue());
+
+  onSubmit() {
+    console.log(this.myForm.value);
   }
 }
